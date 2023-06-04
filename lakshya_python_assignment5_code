@@ -1,1 +1,103 @@
+    1. Write a Python Program to Find LCM?
+    2. Write a Python Program to Find HCF?
+    3. Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal?
+    4. Write a Python Program To Find ASCII value of a character?
+    5. Write a Python Program to Make a Simple Calculator with 4 basic mathematical operations?
 
+
+Answer 1
+
+def lcm(x, y):
+    z = x if x > y else y
+    temp = z
+    while(True):
+        if((z % x == 0) and (z % y == 0)): 
+            return z
+        z += temp
+a = int(input("Enter first number : "))
+b = int(input("Enter second number : "))
+c = lcm(a,b)
+print("LCM of %d and %d is %d"%(a,b,c))
+
+Answer 2:
+
+
+x = int(input("Enter the first number"))
+y = int(input("Enter the second number"))
+def gcd(x,y):
+    if x == y or y == 0:
+        return x
+    if x == 0:
+        return y
+    
+    else:
+        if x>y:
+            return gcd(x-y,y)
+        else:
+            return gcd(x,y-x)
+
+print(gcd(x,y))
+
+
+
+Answer 5: def cal():
+    x = ('1. Add \n2. Sub \n3. Multiply \n4. Divide')
+    print(x)
+cal()
+
+cal1 = input('Enter your choice: ')
+
+num1 = int(input('Enter First number: '))
+num2 = int(input('Enter Second number: '))
+
+if cal1 == '1':
+    x1 = num1 + num2
+    print('Total number: ' + str(x1))
+elif cal1 == '2':
+    x2 = num1 - num2
+    print('Total number: ' + str(x2))
+elif cal1 == '3':
+    x3 = num1 * num2
+    print('Total number: ' + str(x3))
+elif cal1 == '4':
+    x4 = num1 / num2
+    print('Total number: ' + str(x4))
+else:
+    print("Invalid input")   
+
+
+
+
+
+
+
+
+Answer 3:
+Decimal to Binary 
+def dectobin(num):
+    if num > 1:
+        dectobin(num/2)
+    print(num % 2, end='')
+number = int(input("Enter the decimal number"))
+dectobin(number)
+
+
+
+def decimal_to_octal(n):
+    result = list()
+    while n:
+        res = n % 8
+        n = n // 8
+        result.append(res)
+    return result[::-1]
+    number = int(input("Enter a number: "))
+    ans = decimal_to_octal(number)
+    for i in ans:
+        print(i, end="")
+
+
+Answer 4:
+ch = input("Enter character: ")
+
+asc = ord(ch)
+print("ASCII code of",ch,"is:", asc)

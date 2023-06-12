@@ -1,1 +1,83 @@
+    1. Write a Python Program to Display Fibonacci Sequence Using Recursion?
+    2. Write a Python Program to Find Factorial of Number Using Recursion?
+    3. Write a Python Program to calculate your Body Mass Index?
+    4. Write a Python Program to calculate the natural logarithm of any number?
+    5. Write a Python Program for cube sum of first n natural numbers?
+
+
+Answer : 1 
+def fib(n):
+        l = []
+        a, b = 0,1
+        for i in range(n):
+            l.append(a)
+            a, b = b, a + b
+        return l
+n = int(input("Enter the number of elements in series you want to type"))
+showfib = fib(n)
+print("fibnocci")
+
+print(showfib)
+
+
+Answer2:
+def recursive_factorial(n):
+  if n == 1:
+      return n
+  else:
+      return n * recursive_factorial(n-1)
+ 
+# user input
+num = 6
+ 
+# check if the input is valid or not
+if num < 0:
+  print("Invalid input ! Please enter a positive number.")
+elif num == 0:
+  print("Factorial of number 0 is 1")
+else:
+  print("Factorial of number", num, "=", recursive_factorial(num))
+
+
+Answer 3:
+
+def cal(weight, height)
+check = weight/ (height **2)
+return check
+def interpret_(check):
+	if check < 18.5:
+		category = “underwieght”
+	elif 18.5 <= check < 25:
+			category = “ normal wieght”
+elif 25 < = check , 30:
+		category = “overwight”
+else:
+		category = “overwight”
+return catergory
+weight = float(input(“enter the weight in kg”)
+height = float(input(“enter the weight in meter”)
+category = interpret_(check)
+print(“Your wieght”, check)
+print(“your category”, category)
+
+Answer4:
+
+import math
+
+number = int(input("Enter the number: "))
+
+ans = math.log(number)
+
+print("The value is:",ans)
+
+
+Answer5: def CubeSum(n):
+    s=0
+    for i in range(n+1):
+        s+=i**3
+    return s
+n=int(input("enter n: "))
+print("sum of cubes of first {} natural numbers: ".format(n),CubeSum(n))
+
+
 

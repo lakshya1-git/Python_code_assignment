@@ -1,0 +1,128 @@
+Answer 1 : Add Two matrix
+
+def add_matrices(matrix1, matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        return None
+
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j] + matrix2[i][j])
+        result.append(row)
+
+    return result
+
+
+# Example usage
+matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+result = add_matrices(matrix1, matrix2)
+
+if result is not None:
+    print("The sum of the matrices is:")
+    for row in result:
+        print(row)
+else:
+    print("Matrix dimensions are not compatible for addition.")
+
+
+Answer2: Mulitple two matrix 
+
+def multiply_matrices(matrix1, matrix2):
+    rows1 = len(matrix1)
+    cols1 = len(matrix1[0])
+    rows2 = len(matrix2)
+    cols2 = len(matrix2[0])
+
+    if cols1 != rows2:
+        return None
+
+    result = [[0 for _ in range(cols2)] for _ in range(rows1)]
+
+    for i in range(rows1):
+        for j in range(cols2):
+            for k in range(cols1):
+                result[i][j] += matrix1[i][k] * matrix2[k][j]
+
+    return result
+
+
+# Example usage
+matrix1 = [[1, 2, 3], [4, 5, 6]]
+matrix2 = [[7, 8], [9, 10], [11, 12]]
+
+result = multiply_matrices(matrix1, matrix2)
+
+if result is not None:
+    print("The product of the matrices is:")
+    for row in result:
+        print(row)
+else:
+    print("Matrix dimensions are not compatible for multiplication.")
+
+
+Answer: Transpose Matrix
+def transpose_matrix(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    # Create a new matrix with swapped dimensions
+    transpose = [[0 for _ in range(rows)] for _ in range(cols)]
+
+    for i in range(rows):
+        for j in range(cols):
+            transpose[j][i] = matrix[i][j]
+
+    return transpose
+
+
+# Example usage
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+transposed = transpose_matrix(matrix)
+
+print("Original matrix:")
+for row in matrix:
+    print(row)
+
+print("Transposed matrix:")
+for row in transposed:
+    print(row)
+
+Answer 4: 
+def sort_words(words):
+    sorted_words = sorted(words)
+    return sorted_words
+
+
+# Example usage
+word_list = ["banana", "apple", "orange", "grape", "cherry"]
+
+sorted_words = sort_words(word_list)
+
+print("Sorted words:")
+for word in sorted_words:
+    print(word)
+
+
+Answer5:
+import string
+
+def remove_punctuation(input_string):
+    # Create a translation table with punctuation characters mapped to None
+    translator = str.maketrans("", "", string.punctuation)
+    
+    # Use the translation table to remove punctuation from the input string
+    no_punct_string = input_string.translate(translator)
+    
+    return no_punct_string
+
+
+# Example usage
+input_string = "Hello, World! How are you?"
+
+no_punct_string = remove_punctuation(input_string)
+
+print("String without punctuation:", no_punct_string)

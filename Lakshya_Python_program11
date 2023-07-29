@@ -1,1 +1,135 @@
+Solutoin1- 
+def find_words_greater_than_length(input_str, k):
+    words = input_str.split()
+    result = [word for word in words if len(word) > k]
+    return result
 
+if __name__ == "__main__":
+    input_text = input("Enter a sentence or a list of words separated by spaces: ")
+    length_threshold = int(input("Enter the minimum word length to search for: "))
+
+    words_greater_than_length = find_words_greater_than_length(input_text, length_threshold)
+    
+    if words_greater_than_length:
+        print(f"Words greater than length {length_threshold}:")
+        print(words_greater_than_length)
+    else:
+        print(f"No words found greater than length {length_threshold}.")
+
+Solution2 -
+def remove_ith_character(input_str, i):
+    if i < 0 or i >= len(input_str):
+        return "Invalid index! Index should be in the range [0, len(input_str) - 1]."
+
+    new_str = input_str[:i] + input_str[i + 1:]
+    return new_str
+
+if __name__ == "__main__":
+    input_text = input("Enter a string: ")
+    index_to_remove = int(input("Enter the index of the character to remove (0-based index): "))
+
+    result = remove_ith_character(input_text, index_to_remove)
+    print("Result:", result)
+
+Solution3-
+
+def split_and_join(input_str, delimiter):
+     
+    words_list = input_str.split(delimiter)
+
+      
+    joined_string = " ".join(words_list)
+
+    return words_list, joined_string
+
+if __name__ == "__main__":
+    input_text = input("Enter a string: ")
+    split_delimiter = input("Enter the delimiter to split the string: ")
+
+    Solution4-
+
+def split_and_join(input_str, delimiter):
+    
+    words_list = input_str.split(delimiter)
+
+    
+    joined_string = " ".join(words_list)
+
+    return words_list, joined_string
+
+if __name__ == "__main__":
+    input_text = input("Enter a string: ")
+    split_delimiter = input("Enter the delimiter to split the string: ")
+
+    
+    words_list, joined_string = split_and_join(input_text, split_delimiter)
+
+    print("Original String:", input_text)
+    print("Split String:", words_list)
+
+    print("Joined String:", joined_string)
+
+Solution5:
+def split_and_join(input_str, delimiter):
+    # Split the string into a list of substrings using the given delimiter
+    words_list = input_str.split(delimiter)
+
+    # Join the list of substrings into a single string using a space as the separator
+    joined_string = " ".join(words_list)
+
+    return words_list, joined_string
+
+if __name__ == "__main__":
+    input_text = input("Enter a string: ")
+    split_delimiter = input("Enter the delimiter to split the string: ")
+
+    # Split the input string into a list of words using the specified delimiter
+    words_list, joined_string = split_and_join(input_text, split_delimiter)
+
+    print("Original String:", input_text)
+    print("Split String:", words_list)
+    print("Joined String:", joined_string)
+
+
+Solution6:
+
+def find_uncommon_words(str1, str2):
+    words1 = set(str1.split())
+    words2 = set(str2.split())
+
+    uncommon_words = words1.symmetric_difference(words2)
+    return uncommon_words
+
+if __name__ == "__main__":
+    input_str1 = input("Enter the first string: ")
+    input_str2 = input("Enter the second string: ")
+
+    uncommon_words = find_uncommon_words(input_str1, input_str2)
+
+    if uncommon_words:
+        print("Uncommon words:")
+        print(uncommon_words)
+    else:
+        print("No uncommon words found.")
+Solution7-
+
+def has_special_character(input_str):
+    # Define a set of allowed characters (alphanumeric characters)
+    allowed_characters = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+
+    # Iterate through each character in the string
+    for char in input_str:
+        # Check if the character is not in the set of allowed characters
+        if char not in allowed_characters:
+            return True
+
+    # If no special character is found, return False
+    return False
+
+if __name__ == "__main__":
+    input_text = input("Enter a string: ")
+
+    if has_special_character(input_text):
+        print("The string contains special characters.")
+    else:
+        print("The string does NOT contain any special characters.")

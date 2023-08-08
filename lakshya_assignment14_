@@ -1,0 +1,85 @@
+Answer 1 :
+import math
+C = 50
+H = 30
+input_sequence = input("Enter comma-separated values of D: ")
+d_values = input_sequence.split(',')
+
+output_values = []
+
+for d in d_values:
+    d = int(d)
+    q = int(math.sqrt((2 * C * d) / H))
+    output_values.append(str(q))
+
+output_sequence = ','.join(output_values)
+print("Output:", output_sequence)
+
+Answer 2:
+
+
+X, Y = map(int, input("Enter two digits (X and Y): ").split(','))
+
+# Generate the 2-dimensional array
+array = []
+for i in range(X):
+    row = []
+    for j in range(Y):
+        row.append(i * j)
+    array.append(row)
+for row in array:
+    print(row)
+
+Answer3:
+
+
+input_sequence = input("Enter comma-separated words: ")
+words = input_sequence.split(',')
+sorted_words = sorted(words)
+output_sequence = ','.join(sorted_words)
+print("Output:", output_sequence)
+
+Answer4:
+
+input_sequence = input("Enter whitespace-separated words: ")
+words = input_sequence.split()
+unique_words = sorted(set(words))
+output_sequence = ' '.join(unique_words)
+print("Output:", output_sequence)
+
+Answer5:
+
+input_sentence = input("Enter a sentence: ")
+
+letter_count = 0
+for char in input_sentence:
+    if char.isalpha():  # Check if the character is a letter
+        letter_count += 1
+print("LETTERS", letter_count)
+
+
+Answer6:
+
+import re
+
+# Function to check password validity
+def is_valid_password(password):
+    if 6 <= len(password) <= 12:
+        if re.search("[a-z]", password) and re.search("[0-9]", password) and re.search("[A-Z]", password) and re.search("[$#@]", password):
+            return True
+    return False
+
+# Input comma-separated passwords
+input_passwords = input("Enter comma-separated passwords: ")
+passwords = input_passwords.split(',')
+
+# Check and print valid passwords
+valid_passwords = [password for password in passwords if is_valid_password(password)]
+output_valid_passwords = ','.join(valid_passwords)
+print("Valid passwords:", output_valid_passwords)
+
+
+
+
+
+

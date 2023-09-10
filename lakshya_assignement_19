@@ -1,0 +1,84 @@
+Question1
+Create a function that takes a string and returns a string in which each character is repeated
+once.
+Answer1 - def repeat_characters(input_string):
+    result = ''
+
+    for char in input_string:
+        result += char * 2
+
+    return result
+input_str = "Hello"
+repeated_str = repeat_characters(input_str)
+print(repeated_str)  # ➞ "HHeelllloo"
+
+QUestion2 - 
+Create a function that reverses a boolean value and returns the string &quot;boolean expected&quot;
+if another variable type is given.
+
+Answer2 - 
+def reverse_boolean(value):
+    if isinstance(value, bool):
+        return not value
+    else:
+        return "boolean expected"
+
+# Test cases
+print(reverse_boolean(True))      # ➞ False
+print(reverse_boolean(False))     # ➞ True
+print(reverse_boolean("Hello"))   # ➞ "boolean expected"
+print(reverse_boolean(123))       # ➞ "boolean expected"
+
+Question3
+Create a function that returns the thickness (in meters) of a piece of paper after folding it n
+number of times. The paper starts off with a thickness of 0.5mm.
+
+Answer3 - Below function
+def paper_thickness_after_folding(n):
+    initial_thickness_mm = 0.5  # Initial thickness in millimeters
+    initial_thickness_m = initial_thickness_mm / 1000  # Convert to meters
+    final_thickness = initial_thickness_m * (2 ** n)
+    return final_thickness
+
+
+print(paper_thickness_after_folding(0))  # ➞ 0.0005 meters (0.5mm)
+print(paper_thickness_after_folding(1))  # ➞ 0.001 meters (1mm)
+print(paper_thickness_after_folding(10))  # ➞ 0.512 meters
+print(paper_thickness_after_folding(20))  # ➞ 524.288 meters
+
+Question4
+
+Create a function that takes a single string as argument and returns an ordered list containing
+the indices of all capital letters in the string.
+
+Answer4 -
+def find_capital_indices(input_string):
+    capital_indices = []
+
+    # Iterate through the characters in the input string and their indices
+    for index, char in enumerate(input_string):
+        if char.isupper():
+            capital_indices.append(index)
+
+    return capital_indices
+
+# Test case
+input_str = "Hello World"
+indices_list = find_capital_indices(input_str)
+print(indices_list)  # ➞ [0, 6]
+
+
+Question5- 
+Using list comprehensions, create a function that finds all even numbers from 1 to the given
+number.
+
+Answer5 -
+
+def find_even_numbers(n):
+    even_numbers = [x for x in range(1, n + 1) if x % 2 == 0]
+    return even_numbers
+
+# Test case
+n = 10
+even_numbers = find_even_numbers(n)
+print(even_numbers)  # ➞ [2, 4, 6, 8, 10]

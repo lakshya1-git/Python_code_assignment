@@ -1,0 +1,103 @@
+Question 1 - 
+Create a function that takes three integer arguments (a, b, c) and returns the amount of
+integers which are of equal value.
+Your function must return 0, 2 or 3.
+
+Answer 1 -
+def count_equal_integers(a, b, c):
+    if a == b == c:
+        return 3  # All three integers are equal
+    elif a == b or b == c or a == c:
+        return 2  # Two integers are equal
+    else:
+        return 0  # No integers are equal
+print(count_equal_integers(1, 2, 3))  # ➞ 0 (None of the integers are equal)
+print(count_equal_integers(1, 1, 2))  # ➞ 2 (Two integers are equal)
+print(count_equal_integers(3, 3, 3))  # ➞ 3 (All three integers are equal)
+print(count_equal_integers(4, 4, 4))  # ➞ 3 (All three integers are equal)
+print(count_equal_integers(5, 6, 5))  # ➞ 2 (Two integers are equal)
+
+
+QUestion 2 - Write a function that converts a dictionary into a list of keys-values tuples. Notes
+Return the elements in the list in alphabetical order.
+
+Answer 2 - 
+def dict_to_sorted_tuples(input_dict):
+    # Convert the dictionary to a list of key-value tuples and sort it alphabetically
+    sorted_tuples = sorted(input_dict.items())
+    
+    return sorted_tuples
+my_dict = {'apple': 3, 'banana': 1, 'cherry': 2}
+sorted_list = dict_to_sorted_tuples(my_dict)
+print(sorted_list)
+
+Question 3 - 
+Write a function that creates a dictionary with each (key, value) pair being the (lower case,
+upper case) versions of a letter, respectively.
+
+Answer 3 -
+def letter_case_dict():
+
+    case_dict = {}
+        for ascii_value in range(97, 123):
+        lowercase_letter = chr(ascii_value)  # Convert ASCII value to lowercase letter
+        uppercase_letter = lowercase_letter.upper()  # Convert to uppercase
+        
+
+        case_dict[lowercase_letter] = uppercase_letter
+    
+    return case_dict
+
+
+letter_mapping = letter_case_dict()
+
+# Test cases
+print(letter_mapping)
+
+Question4  -Write a function, that replaces all vowels in a string with a specified vowel.-  Notes
+All words will be lowercase. Y is not considered a vowel.
+
+ANswer4 - def replace_vowels(input_string, replacement_vowel):
+    
+    vowels = 'aeiou'
+
+    
+    result = ''
+
+    
+    for char in input_string:
+        # Check if the character is a vowel
+        if char in vowels:
+            # If it's a vowel, add the replacement vowel to the result
+            result += replacement_vowel
+        else:
+            # If it's not a vowel, add the original character to the result
+            result += char
+
+    return result
+
+
+input_str = "hello world"
+replacement_str = replace_vowels(input_str, 'u')
+print(replacement_str)  # ➞ "hullu wurld"
+
+
+Question5
+Create a function that takes a string as input and capitalizes a letter if its ASCII code is even
+and returns its lower case version if its ASCII code is odd.
+
+Answer5 -def capitalize_odd_ascii(input_string):
+    result = ''
+
+    for char in input_string:
+        ascii_code = ord(char)
+
+        if ascii_code % 2 == 0:  # ASCII code is even
+            result += char.upper()
+        else:
+            result += char.lower()
+
+    return result
+input_str = "Hello World"
+modified_str = capitalize_odd_ascii(input_str)
+print(modified_str)  # ➞ "hElLo wOrLd"
